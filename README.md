@@ -19,6 +19,9 @@ Neural Network Implemented:
 
 A consistent data format used for fixed point arithmetic this entire project:
 Format: 16 bits
+| Signed Bit |  Integer Bits | Fractional Bits | 
+| ---------- | --------------| --------------- |
+| 1          |  2            | 13              |
 1. 1 Signed Bit
 2. 2 Integer Bits
 3. 13 Fractional Bits
