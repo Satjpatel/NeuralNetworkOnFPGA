@@ -7,10 +7,10 @@ This project aims to create a basic framework for a basic neural network on an F
 Hierarchy of the project: 
 
 - `neuralnetwork.sv`
- - `neuralnetwork_layer.sv`
-  - `neuron.sv`
-    - `fixed_point_add.sv`
-    - `fixed_point_mult.sv`
-    - `sigmoid_lut.sv`
+    - `neuralnetwork_layer.sv`
+        - `neuron.sv`
+            - `fixed_point_add.sv`
+            - `fixed_point_mult.sv`
+            - `sigmoid_lut.sv`
 
 
