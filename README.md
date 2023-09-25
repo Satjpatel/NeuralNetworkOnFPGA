@@ -22,7 +22,6 @@ A consistent data format used for **fixed point arithmetic** this entire project
 | Signed Bit |  Integer Bits | Fractional Bits | 
 | ---------- | --------------| --------------- |
 | 1          |  2            | 13              |
-| ---------- | --------------| --------------- |
 
 
 ## Neural Network Brief
