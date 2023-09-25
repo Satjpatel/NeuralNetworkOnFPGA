@@ -13,4 +13,11 @@ Hierarchy of the project:
             - `fixed_point_mult.sv`
             - `sigmoid_lut.sv`
 
+Neural Network Implemented:
+![image](https://github.com/Satjpatel/NeuralNetworkOnFPGA/assets/44218342/2712abeb-d4d0-4417-aec6-e456939e9668)
 
+A consistent data format used for fixed point arithmetic this entire project:
+Format: 16 bits
+1. 1 Signed Bit
+2. 2 Integer Bits
+3. 13 Fractional Bits
