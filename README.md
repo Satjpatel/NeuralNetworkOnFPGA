@@ -9,9 +9,9 @@ Hierarchy of the project:
 - `neuralnetwork.sv`
     - `neuralnetwork_layer.sv`
         - `neuron.sv`
-            - `fixed_point_add.sv`
-            - `fixed_point_mult.sv`
-            - `sigmoid_lut.sv`
+             - `fixed_point_add.sv`
+             - `fixed_point_mult.sv`
+             - `sigmoid_lut.sv`
 
 Neural Network Implemented:
 
