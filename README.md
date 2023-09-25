@@ -36,9 +36,9 @@ A consistent data format used for **fixed point arithmetic** this entire project
 
 \### Project status
 
-- [] Python proof of concept
-- [] Fixed Point Adder
-- [] Fixed Point Multiplier
+- [x] Python proof of concept
+- [x] Fixed Point Adder
+- [x] Fixed Point Multiplier
 - [] Sigmoid LUT
 - [] Neuron
 - [] Neural Network Layer
