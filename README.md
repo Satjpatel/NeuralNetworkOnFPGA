@@ -22,3 +22,11 @@ Format: 16 bits
 1. 1 Signed Bit
 2. 2 Integer Bits
 3. 13 Fractional Bits
+
+Neural Network Stuff:
+Layer 	Number of Neurons	Description
+Input Layer	4	Input for 4 input XOR function
+Hidden Layer	2	Feature Extraction for the boolean pattern
+Output Layer	1	If val>0.5 --> TRUE
+		else val<0.5 --> FALSE
+![image](https://github.com/Satjpatel/NeuralNetworkOnFPGA/assets/44218342/0668c6da-89a4-46cf-9231-ad321661ba90)
