@@ -33,3 +33,14 @@ A consistent data format used for **fixed point arithmetic** this entire project
 | Output Layer | 1                 | If val > 0.5 --> TRUE, else val < 0.5 --> FALSE |
 
 ![image](https://github.com/Satjpatel/NeuralNetworkOnFPGA/assets/44218342/0668c6da-89a4-46cf-9231-ad321661ba90)
+
+\### Project status
+
+- [] Python proof of concept
+- [] Fixed Point Adder
+- [] Fixed Point Multiplier
+- [] Sigmoid LUT
+- [] Neuron
+- [] Neural Network Layer
+- [] Neural Network
+- [] Cocotb Verification 
