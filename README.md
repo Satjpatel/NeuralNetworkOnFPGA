@@ -14,6 +14,7 @@ Hierarchy of the project:
             - `sigmoid_lut.sv`
 
 Neural Network Implemented:
+
 ![image](https://github.com/Satjpatel/NeuralNetworkOnFPGA/assets/44218342/2712abeb-d4d0-4417-aec6-e456939e9668)
 
 A consistent data format used for fixed point arithmetic this entire project:
