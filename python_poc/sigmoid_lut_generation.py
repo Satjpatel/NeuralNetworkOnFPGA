@@ -1,7 +1,7 @@
 # Sigmoid LUT Generation
 import math
 import numpy
-
+from helper_functions import *
 # Sigmoid Function
 def __sigmoid(x):
     return 1 / (1 + numpy.exp(-x))
@@ -18,24 +18,30 @@ def Decimal2Binary(x, dataWidth, fracBits):
         if x == 0:
             bin_num = 0
         else:
-            bin_num = 2**dataWidth - x  # Offsetting for the 2's complement
+            bin_num = 2**dataWidth - x  # Offsetting for the 2sig_int_size data_size, data_int_size
+ 
             bin_num = bin(bin_num)[2:]
     return bin_num
 
 # Sigmoid LUT generation
-def sigmoid_lut(dataWidth, sigmoid_input_size, weight_bias_sum_int_size):
+def sigmoid_lut(sig_data_size, sig_int_size, data_size, data_int_size):
+    frac_data_size = data_size - data_int_size - 1 #"1" for the sign bit
+    # Largest Negative Number
+    x = -(2**data_int_size - 2**(-frac_data_size))
+    print(f"x = {x}")
+    # Number of iterations 
+    iterations = 2**(data_size) - 1
+    print(f"iterations = {iterations}")
+    step_size = 2**(-frac_data_size)
+    print(f"Step size = {step_size}")
     f = open("sigmoid_lut.mif", "w")
-    fractBits = sigmoid_input_size - (weight_bias_sum_int_size)
-    if fractBits < 0: 
-        fractBits = 0
-    x = -2**((weight_bias_sum_int_size-1))
-    for i in range(0, 2**sigmoid_input_size):
+    for i in range(0, iterations):
         y = __sigmoid(x)
-        z = Decimal2Binary(y, dataWidth, fractBits)
+        z = float_list_to_binary_string(Decimal2FixedPoint(y, sig_int_size, sig_data_size-sig_int_size-1))
         f.write(z+'\n') # Go to the next line
-        x = x+(2**(-fractBits))
+        x = x+step_size
     f.close()
     
 if __name__ == "__main__":
-    sigmoid_lut(dataWidth=16, sigmoid_input_size=16, weight_bias_sum_int_size=2)
+    sigmoid_lut(16, 2, 10, 2)
     
