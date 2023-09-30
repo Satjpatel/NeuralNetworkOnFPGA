@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1696092128" />
+    <testcase name="tb_fix_point_adder" classname="tb_fix_point_adder" file="/mnt/c/Users/satjp/NeuralNetworkOnFPGA/sim/tb_fix_point_adder.py" lineno="54" time="0.008327484130859375" sim_time_ns="311.0" ratio_time="37346.21346770499" />
+  </testsuite>
+</testsuites>
