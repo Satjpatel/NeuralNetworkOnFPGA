@@ -48,8 +48,7 @@ I am using [cocotb_test](https://github.com/themperek/cocotb-test) with it too, 
 
 All the design and verification files are in the rtl directory. The reason for non-segregation into 'src' and 'sim' is because cocotb-test needs both design and verification files in the same directory. 
 
-Naming convention: 
-
+|Naming convention for | format | 
 | -------------- | ---------- |
 | Design Units    | <module_name>.sv |
 |Cocotb Testbench: |<tb_module_name>.py |
