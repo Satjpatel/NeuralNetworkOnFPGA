@@ -28,7 +28,7 @@ A consistent data format used for **fixed point arithmetic** this entire project
 
 | Layer        | Number of Neurons | Description                                      |
 |--------------|-------------------|--------------------------------------------------|
-| Input Layer  | 4                 | Input for 4 input XOR function                  |
+| Input Layer  | 4                 | Input for 4 input XOR function                   | asasdfasdfasdfasdfasdfsadfsdfsdf
 | Hidden Layer | 2                 | Feature Extraction for the boolean pattern     |
 | Output Layer | 1                 | If val > 0.5 --> TRUE, else val < 0.5 --> FALSE |
 
@@ -44,3 +44,33 @@ A consistent data format used for **fixed point arithmetic** this entire project
 - [] Neural Network Layer
 - [] Neural Network
 - [] Cocotb Verification 
+
+## Cocotb QuickStart
+
+This project gave me an oppurtunity to try out Cocotb(https://github.com/cocotb/cocotb). It is a simulation library for writing testbenches in Python. It is easy to use, and more importantly, compatible with standard Python libraries (makes verifying DSP modules damn easy, ha ha). 
+
+Shoutout to AJ Steenhoek to introduce me to this, and showing me the basics! 
+
+I am using cocotb_test (https://github.com/themperek/cocotb-test) with it too, to remove the need of Makefiles. Shoutout to AJ for this too! 
+
+All the design and verification files are in the rtl directory. The reason for non-segregation into 'src' and 'sim' is because cocotb-test needs both design and verification files in the same directory. 
+
+Naming convention: 
+
+Design Units: <module_name>.sv
+Cocotb Testbench: <tb_module_name>.py
+Cocotb-test File: <test_module_name>.py
+
+For Quick Reference, an example of a Cocotb test file: 
+
+- Create a `<test_module_name>.py` file: 
+
+```python
+from cocotb_test.simulator import run
+def test_fix_point_adder():
+    run(
+        verilog_sources=["fix_point_adder.sv"], # source
+        toplevel="fix_point_adder",             # top level HDL
+        module="tb_fix_point_adder"             # name of cocotb test module
+    )
+```
