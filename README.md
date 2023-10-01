@@ -8,11 +8,6 @@ This exercise serves as a foundational step in exploring the implementation of m
 
 I plan to take this project forward with making an FPGA implementation of an audio autoencoder in the coming weeks. 
 
-
-Neural Network Implemented:
-
-![image](https://github.com/Satjpatel/NeuralNetworkOnFPGA/assets/44218342/2712abeb-d4d0-4417-aec6-e456939e9668)
-
 A consistent data format used for **fixed point arithmetic** this entire project:
 
 | Signed Bit |  Integer Bits | Fractional Bits | 
@@ -22,23 +17,30 @@ A consistent data format used for **fixed point arithmetic** this entire project
 
 ## Neural Network Brief
 
+
+Neural Network Implemented:
+
+
+This neural network is a small-scale implementation designed to solve the XOR logical operation. It consists of an input layer with four neurons, a hidden layer with two neurons, and an output layer with one neuron. The network uses the sigmoid activation function to normalize input data and performs forward and backward passes during training.
+
 | Layer        | Number of Neurons | Description                                      |
 |--------------|-------------------|--------------------------------------------------|
-| Input Layer  | 4                 | Input for 4 input XOR function                   | asasdfasdfasdfasdfasdfsadfsdfsdf
+| Input Layer  | 4                 | Input for 4 input XOR function                   | 
 | Hidden Layer | 2                 | Feature Extraction for the boolean pattern     |
 | Output Layer | 1                 | If val > 0.5 --> TRUE, else val < 0.5 --> FALSE |
 
+![image](https://github.com/Satjpatel/NeuralNetworkOnFPGA/assets/44218342/2712abeb-d4d0-4417-aec6-e456939e9668)
 
 \### Project status
 
 - [x] Python proof of concept
 - [x] Fixed Point Adder
 - [x] Fixed Point Multiplier
-- [] Sigmoid LUT
+- [x] Sigmoid LUT
 - [] Neuron
 - [] Neural Network Layer
 - [] Neural Network
-- [] Cocotb Verification 
+- [x] Cocotb Verification 
 
 ## Cocotb QuickStart
 
