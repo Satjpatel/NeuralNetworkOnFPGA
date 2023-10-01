@@ -3,7 +3,9 @@
 An initial proof of concept for a neural network on FPGA. 
 
 I created this project as a proof of concept to start working with Neural Networks on an FPGA. The goal was to demonstrate that a NN could be trained to perform a simple operation (4 input XOR, for its simplicity) and then save its learned weights and biases in a format suitable for FPGA implementation. 
+
 This exercise serves as a foundational step in exploring the implementation of machine learning models on hardware platforms like FPGAs, which can be more efficient for certain types of computations. 
+
 I plan to take this project forward with making an FPGA implementation of an audio autoencoder in the coming weeks. 
 
 
