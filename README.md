@@ -1,17 +1,9 @@
 # NeuralNetworkOnFPGA
 
-An initial proof of concept for neural network on FPGA. 
+An initial proof of concept for a neural network on FPGA. 
 
-This project aims to create a basic framework for a basic neural network on an FPGA. 
+I created this project as a proof of concept to start working with Neural Networks on an FPGA. The goal was to demonstrate that a NN could be trained to perform a simple operation (4 input XOR, for its simplicity) and then save its learned weights and biases in a format suitable for FPGA implementation. This exercise serves as a foundational step in exploring the implementation of machine learning models on hardware platforms like FPGAs, which can be more efficient for certain types of computations. The code showcases the training of a neural network, conversion of its parameters to fixed-point representation, and provides a glimpse into the potential of deploying machine learning models on specialized hardware. I plan to take this project forward with making an FPGA implementation of an audio autoencoder in the coming weeks. 
 
-Hierarchy of the project: 
-
-- `neuralnetwork.sv`
-    - `neuralnetwork_layer.sv`
-        - `neuron.sv`
-             - `fixed_point_add.sv`
-             - `fixed_point_mult.sv`
-             - `sigmoid_lut.sv`
 
 Neural Network Implemented:
 
@@ -32,7 +24,6 @@ A consistent data format used for **fixed point arithmetic** this entire project
 | Hidden Layer | 2                 | Feature Extraction for the boolean pattern     |
 | Output Layer | 1                 | If val > 0.5 --> TRUE, else val < 0.5 --> FALSE |
 
-![image](https://github.com/Satjpatel/NeuralNetworkOnFPGA/assets/44218342/0668c6da-89a4-46cf-9231-ad321661ba90)
 
 \### Project status
 
@@ -47,11 +38,11 @@ A consistent data format used for **fixed point arithmetic** this entire project
 
 ## Cocotb QuickStart
 
-This project gave me an oppurtunity to try out Cocotb(https://github.com/cocotb/cocotb). It is a simulation library for writing testbenches in Python. It is easy to use, and more importantly, compatible with standard Python libraries (makes verifying DSP modules damn easy, ha ha). 
-
 Shoutout to AJ Steenhoek to introduce me to this, and showing me the basics! 
 
-I am using cocotb_test (https://github.com/themperek/cocotb-test) with it too, to remove the need of Makefiles. Shoutout to AJ for this too! 
+This project gave me an oppurtunity to try out [Cocotb](https://github.com/cocotb/cocotb). It is a simulation library for writing testbenches in Python. It is easy to use, and more importantly, compatible with standard Python libraries (makes verifying DSP modules damn easy, ha ha). 
+
+I am using [cocotb_test](https://github.com/themperek/cocotb-test) with it too, to remove the need of Makefiles. Shoutout to AJ for this too! 
 
 All the design and verification files are in the rtl directory. The reason for non-segregation into 'src' and 'sim' is because cocotb-test needs both design and verification files in the same directory. 
 
