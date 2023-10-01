@@ -29,11 +29,12 @@ always @(posedge clk or negedge rstn) begin
     else begin
         peek_delayed <= peek;
         if(poke) begin 
-            if(peek_delayed)
+            if(peek_delayed) begin
                 peek <= 1'b0;
-
+                $display("Turned off peek");
+            end
             // If both numbers are of same sign
-            if(a[N-1] == b[N-1]) begin 
+            else if(a[N-1] == b[N-1]) begin 
                 r_sum[N-2:0] <= a[N-2:0] + b[N-2:0]; // Since they have the same sign, absolute sum increases
                 r_sum[N-1] <= a[N-1];
                 peek <= 1'b1; 

@@ -101,3 +101,11 @@ async def tb_fix_point_adder(dut):
             print(f"Value of peek is ", dut.peek.value)
         else: 
             raise AssertionError(f"Expected value {dut.sum.value} != {res}")
+        
+        
+        for _ in range(2):
+            await RisingEdge(dut.clk)
+        
+        if(dut.peek.value):
+            dut.poke.value = 0
+
