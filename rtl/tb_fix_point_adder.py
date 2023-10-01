@@ -90,11 +90,14 @@ async def tb_fix_point_adder(dut):
         await RisingEdge(dut.clk)
         print("Value of a in ", dut.a.value)
         print("Value of b in ", dut.b.value)
+        dut.poke.value = 1; 
         
-        await RisingEdge(dut.clk)
+        
+        await RisingEdge(dut.peek)
         
         res = SignedFixedPoint2Binary(expected_res[i], 2, 13)
         if (dut.sum.value == res):
             print(f"PASS: Expected value {dut.sum.value} == {res}")
+            print(f"Value of peek is ", dut.peek.value)
         else: 
             raise AssertionError(f"Expected value {dut.sum.value} != {res}")
