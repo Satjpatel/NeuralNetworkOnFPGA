@@ -50,6 +50,12 @@ def SignedFixedPoint2Binary(num, integer_bits, fractional_bits):
     return BinaryValue(float_list_to_binary_string(Decimal2FixedPoint(num, integer_bits, fractional_bits)), integer_bits+fractional_bits+1, True)
 
 
+# Co-routine for waiting for the peek signal
+# @cocotb.coroutine
+# async def wait_peek_high(dut):
+#     while not dut.peek:
+#         await cocotb.triggers.RisingEdge(dut.clk)
+
 
 @cocotb.test()
 async def tb_sigmoid(dut):
@@ -76,6 +82,7 @@ async def tb_sigmoid(dut):
     print('reset value = ', dut.rstn.value)
     
     dut.sigmoid_in.value = SignedFixedPoint2Binary(2.3, 2, 13)
+    dut.poke.value = 1
     # Synchronize with the clock. 
  
     # await RisingEdge(dut.clk)
@@ -86,9 +93,10 @@ async def tb_sigmoid(dut):
     await RisingEdge(dut.clk)
     print(f"Value of sigmoid data in is {dut.sigmoid_in.value}")
     
-    await RisingEdge(dut.clk)
+    await RisingEdge(dut.peek)
+  #  await RisingEdge(dut.clk)
     print(f"Value of sigmoid data out is {dut.sigmoid_out.value}")
-
+    print(f"Value of peek is ", dut.peek.value)
     
     # res = SignedFixedPoint2Binary(expected_res[i], 2, 13)
     # if (dut.sum.value == res):
