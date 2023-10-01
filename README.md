@@ -50,9 +50,12 @@ All the design and verification files are in the rtl directory. The reason for n
 
 Naming convention: 
 
-Design Units: <module_name>.sv
-Cocotb Testbench: <tb_module_name>.py
-Cocotb-test File: <test_module_name>.py
+| -------------- | ---------- |
+| Design Units    | <module_name>.sv |
+|Cocotb Testbench: |<tb_module_name>.py |
+|Cocotb-test File: |<test_module_name>.py |
+
+
 
 For Quick Reference, an example of a Cocotb test file: 
 
