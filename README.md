@@ -17,10 +17,6 @@ A consistent data format used for **fixed point arithmetic** this entire project
 
 ## Neural Network Brief
 
-
-Neural Network Implemented:
-
-
 This neural network is a small-scale implementation designed to solve the XOR logical operation. It consists of an input layer with four neurons, a hidden layer with two neurons, and an output layer with one neuron. The network uses the sigmoid activation function to normalize input data and performs forward and backward passes during training.
 
 | Layer        | Number of Neurons | Description                                      |
@@ -44,7 +40,7 @@ This neural network is a small-scale implementation designed to solve the XOR lo
 
 ## Cocotb QuickStart
 
-Shoutout to AJ Steenhoek to introduce me to this, and showing me the basics! 
+Shoutout to AJ Steenhoek for introducing me to this, and showing me the basics! 
 
 This project gave me an oppurtunity to try out [Cocotb](https://github.com/cocotb/cocotb). It is a simulation library for writing testbenches in Python. It is easy to use, and more importantly, compatible with standard Python libraries (makes verifying DSP modules damn easy, ha ha). 
 
