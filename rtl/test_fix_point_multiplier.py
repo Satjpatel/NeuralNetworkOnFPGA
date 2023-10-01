@@ -1,5 +1,5 @@
 from cocotb_test.simulator import run
-def test_fix_point_adder():
+def test_fix_point_multiplier():
     run(
         verilog_sources=["fix_point_multiplier.sv"], # sources
         toplevel="fix_point_multiplier",            # top level HDL
