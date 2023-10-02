@@ -6,8 +6,6 @@ I created this project as a proof of concept to start working with Neural Networ
 
 This exercise serves as a foundational step in exploring the implementation of machine learning models on hardware platforms like FPGAs, which can be more efficient for certain types of computations. 
 
-I plan to take this project forward with making an FPGA implementation of an audio autoencoder in the coming weeks. 
-
 A consistent data format used for **fixed point arithmetic** this entire project:
 
 | Signed Bit |  Integer Bits | Fractional Bits | 
@@ -75,3 +73,6 @@ And to run it:
 ```
 SIM=icarus pytest -o log_cli=True test_sigmoid.py
 ```
+
+
+I plan to take this project forward with making an FPGA implementation of an audio autoencoder in the coming weeks. Any other ideas or suggestions are much appreciated too!
