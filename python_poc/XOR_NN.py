@@ -1,5 +1,5 @@
 # 4 Bit XOR Neural Network
-# As a proof of concept to start working on the FPGA
+# As a proof of concept to start working on the FPGA -- Initial proof of concept
 import numpy
 import math
 import csv 
