@@ -25,16 +25,17 @@ A consistent data format used for **fixed point arithmetic** this entire project
 | Output Layer | 1                 | If val > 0.5 --> TRUE, else val < 0.5 --> FALSE |
 
 
-\### Project status
+\# Project status
 
 - [x] Python proof of concept
 - [x] Fixed Point Adder
 - [x] Fixed Point Multiplier
-- [] Sigmoid LUT
-- [] Neuron
-- [] Neural Network Layer
-- [] Neural Network
-- [] Cocotb Verification 
+- [x] Sigmoid LUT
+- [x] Cocotb Verification of Adder, Multiplier and Sigmoid
+- [x] Neuron
+- [x] Neural Network Layer
+- [x] Neural Network
+- [] Cocotb Verification of the entire design 
 
 ## Cocotb QuickStart
 
@@ -64,4 +65,9 @@ def test_fix_point_adder():
         toplevel="fix_point_adder",             # top level HDL
         module="tb_fix_point_adder"             # name of cocotb test module
     )
+```
+
+And to run it: 
+```
+SIM=icarus pytest -o log_cli=True test_sigmoid.py
 ```
