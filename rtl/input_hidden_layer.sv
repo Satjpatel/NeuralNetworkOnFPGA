@@ -9,8 +9,7 @@ module input_hidden_layer
     input          clk,
     input          rstn,
     input    [N-1:0] data_in [0:NUM_OF_INPUTS-1],
-    input [N-1:0] WeightMem [0:NUM_OF_INPUTS-1][0:NUM_OF_OUTPUTS-1], 
-    input [N-1:0] BiasMem [0:NUM_OF_OUTPUTS-1],
+
     input           fire,
     output   [N-1:0] data_out [0:NUM_OF_OUTPUTS-1],
     output              done
@@ -20,24 +19,27 @@ wire done_int [NUM_OF_OUTPUTS-1:0];
 wire overflow_int [0:NUM_OF_INPUTS-1][0:NUM_OF_OUTPUTS-1];
 wire [N-1:0] data_out_int [0:NUM_OF_OUTPUTS-1];
 
+reg [N-1:0] WeightMem [0:NUM_OF_INPUTS-1][0:NUM_OF_OUTPUTS-1];
+reg [N-1:0] BiasMem [0:NUM_OF_OUTPUTS-1];
 
 // Load the weights and biases
-
-    // Neuron 1
-assign WeightMem[0][0] = 16'b1110010000111100; 
-assign WeightMem[1][0] = 16'b0111100010001000; 
-assign WeightMem[2][0] = 16'b0111100010001000; 
-assign WeightMem[3][0] = 16'b0111100010001000; 
-
-    // Neuron 2
-assign WeightMem[0][1] = 16'b1111011011000010; 
-assign WeightMem[1][1] = 16'b0110111001100111; 
-assign WeightMem[2][1] = 16'b0110111001100111; 
-assign WeightMem[3][1] = 16'b0110111001100111; 
-    
-    // Bias
-assign BiasMem[0] = 16'b1111011110010110;
-assign BiasMem[1] = 16'b1111010010111110; 
+always @(negedge rstn) begin
+ 
+ // Neuron 1
+WeightMem[0][0] <= 16'b1110010000111100; 
+WeightMem[1][0] <= 16'b0111100010001000; 
+WeightMem[2][0] <= 16'b0111100010001000; 
+WeightMem[3][0] <= 16'b0111100010001000; 
+// Neuron 2
+WeightMem[0][1] <= 16'b1111011011000010; 
+WeightMem[1][1] <= 16'b0110111001100111; 
+WeightMem[2][1] <= 16'b0110111001100111; 
+WeightMem[3][1] <= 16'b0110111001100111; 
+   
+// Bias
+BiasMem[0] <= 16'b1111011110010110;
+BiasMem[1] <= 16'b1111010010111110; 
+end
 
 
 
