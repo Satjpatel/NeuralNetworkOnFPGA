@@ -2,12 +2,11 @@
 
 An initial proof of concept for a neural network on FPGA. 
 
-I created this project as a proof of concept to start working with Neural Networks on an FPGA. The goal was to demonstrate that a NN could be trained to perform a simple operation (4 input XOR, for its simplicity) and then save its learned weights and biases in a format suitable for FPGA implementation. This exercise serves as a foundational step in exploring the implementation of machine learning models on hardware platforms like FPGAs, which can be more efficient for certain types of computations. The code showcases the training of a neural network, conversion of its parameters to fixed-point representation, and provides a glimpse into the potential of deploying machine learning models on specialized hardware. I plan to take this project forward with making an FPGA implementation of an audio autoencoder in the coming weeks. 
+I created this project as a proof of concept to start working with Neural Networks on an FPGA. The goal was to demonstrate that a NN could be trained to perform a simple operation (4 input XOR, for its simplicity) and then save its learned weights and biases in a format suitable for FPGA implementation. 
 
+This exercise serves as a foundational step in exploring the implementation of machine learning models on hardware platforms like FPGAs, which can be more efficient for certain types of computations. 
 
-Neural Network Implemented:
-
-![image](https://github.com/Satjpatel/NeuralNetworkOnFPGA/assets/44218342/2712abeb-d4d0-4417-aec6-e456939e9668)
+I plan to take this project forward with making an FPGA implementation of an audio autoencoder in the coming weeks. 
 
 A consistent data format used for **fixed point arithmetic** this entire project:
 
@@ -18,12 +17,15 @@ A consistent data format used for **fixed point arithmetic** this entire project
 
 ## Neural Network Brief
 
+This neural network is a small-scale implementation designed to solve the XOR logical operation. It consists of an input layer with four neurons, a hidden layer with two neurons, and an output layer with one neuron. The network uses the sigmoid activation function to normalize input data and performs forward and backward passes during training.
+
 | Layer        | Number of Neurons | Description                                      |
 |--------------|-------------------|--------------------------------------------------|
-| Input Layer  | 4                 | Input for 4 input XOR function                   | asasdfasdfasdfasdfasdfsadfsdfsdf
+| Input Layer  | 4                 | Input for 4 input XOR function                   | 
 | Hidden Layer | 2                 | Feature Extraction for the boolean pattern     |
 | Output Layer | 1                 | If val > 0.5 --> TRUE, else val < 0.5 --> FALSE |
 
+![image](https://github.com/Satjpatel/NeuralNetworkOnFPGA/assets/44218342/2712abeb-d4d0-4417-aec6-e456939e9668)
 
 \# Project status
 
@@ -39,7 +41,7 @@ A consistent data format used for **fixed point arithmetic** this entire project
 
 ## Cocotb QuickStart
 
-Shoutout to AJ Steenhoek to introduce me to this, and showing me the basics! 
+Shoutout to AJ Steenhoek for introducing me to this, and showing me the basics! 
 
 This project gave me an oppurtunity to try out [Cocotb](https://github.com/cocotb/cocotb). It is a simulation library for writing testbenches in Python. It is easy to use, and more importantly, compatible with standard Python libraries (makes verifying DSP modules damn easy, ha ha). 
 
@@ -47,11 +49,13 @@ I am using [cocotb_test](https://github.com/themperek/cocotb-test) with it too, 
 
 All the design and verification files are in the rtl directory. The reason for non-segregation into 'src' and 'sim' is because cocotb-test needs both design and verification files in the same directory. 
 
-Naming convention: 
+|Naming convention for | format | 
+| -------------- | ---------- |
+| Design Units    | <module_name>.sv |
+|Cocotb Testbench: |<tb_module_name>.py |
+|Cocotb-test File: |<test_module_name>.py |
 
-Design Units: <module_name>.sv
-Cocotb Testbench: <tb_module_name>.py
-Cocotb-test File: <test_module_name>.py
+
 
 For Quick Reference, an example of a Cocotb test file: 
 
